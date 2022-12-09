@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  AzureDevOpsAgent01
 - task: UiPathRunJob@2
   inputs:
     orchestratorConnection: 'AzureDevOpsSCC'
@@ -16,12 +16,3 @@ pool:
     jobType: 'NonProduction'
     user: 'desktop-uklseuq\asusgr8ii'
     machine: 'desktop-uklseuq'
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
