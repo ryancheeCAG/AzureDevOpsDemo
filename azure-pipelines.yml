@@ -8,6 +8,7 @@ trigger:
 
 pool:
   AzureDevOpsAgent01
+
 - task: UiPathRunJob@2
   inputs:
     orchestratorConnection: 'AzureDevOpsSCC'
