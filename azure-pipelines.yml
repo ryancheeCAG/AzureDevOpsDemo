@@ -8,10 +8,7 @@ trigger:
 
 pool:
   AzureDevOpsAgent01
-- task: UiPathTest@2
-  inputs:
-    testTarget: 'TestProject'
-    orchestratorConnection: 'AzureDevOpsSCC'
+
 - task: UiPathPack@2
   inputs:
     versionType: 'AutoVersion'
