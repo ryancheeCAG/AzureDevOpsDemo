@@ -5,13 +5,13 @@ pool:
 'AzureDevOpsAgent01
 - task: UiPathPack@2
   inputs:
-    versionType: 'AutoVersion'
-    projectJsonPath: '$(Build.SourcesDirectory)'
-    outputType: 'Process'
-    orchestratorConnection: 'AzureDevOpsSCC'
-    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+    versionType:'AutoVersion'
+    projectJsonPath:'$(Build.SourcesDirectory)'
+    outputType:'Process'
+    orchestratorConnection:'AzureDevOpsSCC'
+    outputPath:'$(Build.ArtifactStagingDirectory)\Output'
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'Demo01Artifact'
-        publishLocation: 'Container'
+        PathtoPublish:'$(Build.ArtifactStagingDirectory)'
+        ArtifactName:'Demo01Artifact'
+        publishLocation:'Container'
