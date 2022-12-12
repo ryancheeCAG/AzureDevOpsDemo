@@ -2,8 +2,8 @@ trigger:
 - main
 
 pool:
- AzureDevOpsAgent01
--task: UiPathPack@2
+AzureDevOpsAgent01
+- task: UiPathPack@2
   inputs:
     versionType: 'AutoVersion'
     projectJsonPath: '$(Build.SourcesDirectory)'
