@@ -5,7 +5,7 @@ pool:
 'AzureDevOpsAgent01
 - task: UiPathPack@2
   inputs:
-    versionType:'AutoVersion'
+    versionType: 'AutoVersion'
     projectJsonPath:'$(Build.SourcesDirectory)'
     outputType:'Process'
     orchestratorConnection:'AzureDevOpsSCC'
