@@ -8,12 +8,19 @@ trigger:
 
 pool:
   AzureDevOpsAgent01
-
-- task: UiPathRunJob@2
+- task: UiPathTest@2
   inputs:
+    testTarget: 'TestProject'
     orchestratorConnection: 'AzureDevOpsSCC'
-    processName: 'AzureDevOpsDemo'
-    folderName: 'Non-Production/RPA CoE'
-    jobType: 'NonProduction'
-    user: 'desktop-uklseuq\asusgr8ii'
-    machine: 'desktop-uklseuq'
+- task: UiPathPack@2
+  inputs:
+    versionType: 'AutoVersion'
+    projectJsonPath: '$(Build.SourcesDirectory)'
+    outputType: 'Process'
+    orchestratorConnection: 'AzureDevOpsSCC'
+    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'Demo01Artifact'
+        publishLocation: 'Container'
