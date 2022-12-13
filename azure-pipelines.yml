@@ -10,4 +10,4 @@ AzureDevOpsAgent01
       outputPath:$(Build.ArtifactStagingDirectory)
       outputType:Process
       runWorkflowAnalysis:False
-      orchestratorConnection:AzureDevOpsSCC'
+      orchestratorConnection:AzureDevOpsSCC
