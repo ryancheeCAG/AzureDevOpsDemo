@@ -14,3 +14,15 @@ stages:
     outputType: 'Process'
     orchestratorConnection: 'AzureDevOpsSCC'
     outputPath: '$(Build.ArtifactStagingDirectory)'
+
+
+#- task: UiPathPack@2
+#  inputs:
+    #versionType: AutoVersion # Options: AutoVersion, CurrentVersion, ManualVersion 
+    #version: '1.0.0' # Required when versionType == ManualVersion
+    #projectJsonPath: '$(Build.SourcesDirectory)\MyFirstProcess'
+    #outputPath: '$(Build.ArtifactStagingDirectory)\Packages\MyFirstProcess'
+    #outputType: 'None' # Options: Process, Library, Tests, Objects, None
+    #runWorkflowAnalysis: 'False'
+    #orchestratorConnection: 'service-connection-name' # Service connection to UiPath Orchestrator,
+    #traceLevel: 'None' # Options: Critical, Error, Warning, Information, Verbose, None
