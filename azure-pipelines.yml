@@ -1,7 +1,8 @@
 trigger:
 - main
 
-pool: 'AzureDevOpsAgent01
+pool: 
+'AzureDevOpsAgent01
 - task: UiPathPack@2
   inputs:
     versionType: AutoVersion # Options: AutoVersion, CurrentVersion, ManualVersion 
