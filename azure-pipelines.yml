@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool: 
-'AzureDevOpsAgent01'
+'AzureDevOpsAgent01
 - task: UiPathPack@2
   inputs:
     versionType: AutoVersion # Options: AutoVersion, CurrentVersion, ManualVersion 
@@ -10,5 +10,4 @@ pool:
     outputPath: $(Build.ArtifactStagingDirectory)
     outputType: Process # Options: Process, Library, Tests, Objects, None
     runWorkflowAnalysis: False
-    orchestratorConnection: AzureDevOpsSCC # Service connection to UiPath Orchestrator,
-    traceLevel: None'
+    orchestratorConnection: AzureDevOpsSCC # Service connection to UiPath Orchestrator
