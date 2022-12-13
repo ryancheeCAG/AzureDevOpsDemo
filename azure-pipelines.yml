@@ -38,8 +38,16 @@ stages:
          
       - task: UiPathAssets@2
         inputs:
-          versionType: 'AutoVersion'
-          projectJsonPath: '$(Build.SourcesDirectory)\project.json'
-          outputType: 'Process'
           orchestratorConnection: 'AzureDevOpsSCC'
-          outputPath: '$(Build.ArtifactStagingDirectory)'
+          folderName: 'Non-Production/RPA CoE'
+          assetActionType: 'Deploy'
+          csvFile: '$(Build.SourcesDirectory)\Data\Assets.csv'
+
+
+#- task: UiPathAssets@2
+ # displayName: 'Deploy/Update assets'
+  #inputs:
+    #orchestratorConnection: 'service-connection-name' # Service connection to UiPath Orchestrator
+    #assetActionType: 'Deploy' # Options: Deploy, Delete
+    #csvFile: 'assets_deploy.csv' # the path to the csv file containing the assets description,
+    #traceLevel: 'None' # Options: Critical, Error, Warning, Information, Verbose, None
