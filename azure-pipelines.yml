@@ -9,7 +9,7 @@ stages:
    pool: AzureDevOpsAgent01
    
     - task:UiPathPack@2
-    inputs:
+    inputs:''
       versionType: 'AutoVersion'
       projectJsonPath: '$(Build.SourcesDirectory)\project.json'
       outputType: 'Process'
