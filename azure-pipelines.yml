@@ -5,11 +5,11 @@ pool:
 'AzureDevOpsAgent01
 - task: UiPathPack@2
   inputs:
-    #versionType: ManualVersion # Options: AutoVersion, CurrentVersion, ManualVersion 
+    versionType: AutoVersion # Options: AutoVersion, CurrentVersion, ManualVersion 
     #version: '1.0.$(Build.BuildNumber)' # Required when versionType == ManualVersion
-    #projectJsonPath: '$(Build.SourcesDirectory)\project.json'
-    #outputPath: '$(Build.ArtifactStagingDirectory)'
-    #outputType: 'Process' # Options: Process, Library, Tests, Objects, None
-    #runWorkflowAnalysis: 'False'
-    #orchestratorConnection: 'AzureDevOpsSCC' # Service connection to UiPath Orchestrator,
-    #traceLevel: 'None' # Options: Critical, Error, Warning, Information, Verbose, None
+    projectJsonPath: '$(Build.SourcesDirectory)\project.json'
+    outputPath: '$(Build.ArtifactStagingDirectory)'
+    outputType: 'Process' # Options: Process, Library, Tests, Objects, None
+    runWorkflowAnalysis: 'False'
+    orchestratorConnection: 'AzureDevOpsSCC' # Service connection to UiPath Orchestrator,
+    traceLevel: 'None' # Options: Critical, Error, Warning, Information, Verbose, None
