@@ -4,10 +4,10 @@ trigger:
 pool: 
 AzureDevOpsAgent01
   - task: UiPathPack@2
-  inputs:
-    versionType: AutoVersion # Options: AutoVersion, CurrentVersion, ManualVersion 
-    projectJsonPath: $(Build.SourcesDirectory)\project.json
-    outputPath: $(Build.ArtifactStagingDirectory)
-    outputType: Process # Options: Process, Library, Tests, Objects, None
-    runWorkflowAnalysis: False
-    orchestratorConnection: AzureDevOpsSCC # Service connection to UiPath Orchestrator
+    inputs:
+      versionType: AutoVersion # Options: AutoVersion, CurrentVersion, ManualVersion 
+      projectJsonPath: $(Build.SourcesDirectory)\project.json
+      outputPath: $(Build.ArtifactStagingDirectory)
+      outputType: Process # Options: Process, Library, Tests, Objects, None
+      runWorkflowAnalysis: False
+      orchestratorConnection: AzureDevOpsSCC # Service connection to UiPath Orchestrator
