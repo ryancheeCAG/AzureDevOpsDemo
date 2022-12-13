@@ -1,13 +1,17 @@
 trigger:
  - main
 
-pool: 
-AzureDevOpsAgent01
+stages:
+ - stage: Build
+   displayName: Build Package
+   jobs:
+   - job: BuildPackage
+   pool: AzureDevOpsAgent01
+   
     -task:UiPathPack@2
-    inputs
-      versionType:AutoVersion 
-      projectJsonPath:$(Build.SourcesDirectory)\project.json
-      outputPath:$(Build.ArtifactStagingDirectory)
-      outputType:Process
-      runWorkflowAnalysis:False
-      orchestratorConnection:'AzureDevOpsSCC
+    inputs:
+      versionType: 'AutoVersion'
+      projectJsonPath: '$(Build.SourcesDirectory)\project.json'
+      outputPath: '$(Build.ArtifactStagingDirectory)'
+      outputType: 'Process'
+      orchestratorConnection: 'AzureDevOpsSCC'
