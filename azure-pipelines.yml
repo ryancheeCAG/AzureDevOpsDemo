@@ -8,10 +8,9 @@ stages:
    - job: BuildPackage
    pool: AzureDevOpsAgent01
  - task: UiPathPack@2
-
-- inputs:
-      versionType: 'AutoVersion'
-      projectJsonPath: '$(Build.SourcesDirectory)\project.json'
-      outputType: 'Process'
-      orchestratorConnection: 'AzureDevOpsSCC'
-      outputPath: '$(Build.ArtifactStagingDirectory)'
+   inputs:
+    versionType: 'AutoVersion'
+    projectJsonPath: '$(Build.SourcesDirectory)\project.json'
+    outputType: 'Process'
+    orchestratorConnection: 'AzureDevOpsSCC'
+    outputPath: '$(Build.ArtifactStagingDirectory)'
