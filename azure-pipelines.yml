@@ -1,12 +1,14 @@
 trigger:
- - main
+  - main
 
 stages:
- - stage: Build
-   displayName: Build Package
-   jobs:
-   - job: BuildPackage
-   pool: AzureDevOpsAgent01
+  - stage: Build
+    displayName: Build Package
+    jobs:
+    - job: BuildPackage
+      pool: AzureDevOpsAgent01
+      steps:
+        - 
  - task: UiPathPack@2
    inputs:
     versionType: 'AutoVersion'
