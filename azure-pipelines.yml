@@ -28,3 +28,18 @@ stages:
     #runWorkflowAnalysis: 'False'
     #orchestratorConnection: 'service-connection-name' # Service connection to UiPath Orchestrator,
     #traceLevel: 'None' # Options: Critical, Error, Warning, Information, Verbose, None
+
+  - stage: Assets
+    displayName: Create Assets
+    jobs:
+    - job: CreateAssets
+      pool: AzureDevOpsAgent01
+      steps:
+         
+      - task: UiPathAssets@2
+        inputs:
+          versionType: 'AutoVersion'
+          projectJsonPath: '$(Build.SourcesDirectory)\project.json'
+          outputType: 'Process'
+          orchestratorConnection: 'AzureDevOpsSCC'
+          outputPath: '$(Build.ArtifactStagingDirectory)'
