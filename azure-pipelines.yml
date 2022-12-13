@@ -3,7 +3,7 @@ trigger:
 
 pool: 
 AzureDevOpsAgent01
-- task : UiPathPack@2
+  - task: UiPathPack@2
   inputs:
     versionType: AutoVersion # Options: AutoVersion, CurrentVersion, ManualVersion 
     projectJsonPath: $(Build.SourcesDirectory)\project.json
