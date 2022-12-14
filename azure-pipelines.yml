@@ -12,7 +12,7 @@ stages:
         inputs:
           targetType: 'inline'
           script: 
-           Get-ChildItem -Path "$(Pipeline.Workspace)\drop\" -Include *.nupkg -file -Recurse foreach { $_Delete()}
+           Get-ChildItem -Path "$(Pipeline.Workspace)\drop\" -Include *.nupkg -file -Recurse | foreach { $_.Delete()}
          
       - task: UiPathPack@2
         inputs:
