@@ -12,7 +12,7 @@ stages:
         inputs:
           targetType: 'inline'
           script: 
-           Write-Host "Deleting the Uploaded Package
+           Write-Host "Deleting the Uploaded Package"
            Get-ChildItem -Path "$(Pipeline.Workspace)\drop\" -Include *.nupkg -file -Recurse | foreach { $_Delete()}
          
       - task: UiPathPack@2
