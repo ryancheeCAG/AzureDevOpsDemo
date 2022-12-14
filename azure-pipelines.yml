@@ -81,3 +81,23 @@ stages:
     #folderName: 'ITAutomation'
     #environments: 'AutomationRobots' # Optional,
     #traceLevel: 'None' # Options: Critical, Error, Warning, Information, Verbose, None
+
+  - stage: WorkflowAnalyser
+    displayName: RunWorkflow Analyser
+    dependsOn: Build
+    condition: succeeded()
+    jobs:
+        - job: WorkflowAnalyser
+          displayName: AnalyseProject Using Workflow Cli
+          pool: AzureDevOpsAgent01
+          steps:
+          - task: PowerShell@2
+            inputs:
+              targetType: filePath
+              filePath: $(Build.SourcesDirectory)\Data\Workflow-Analyzer-CLI-Script
+              arguments: > # Use this to avoid newline characters in multiline string
+                -ProjectFilePath $(Build.SourcesDirectory)\project.json
+                -ExecutableFilePath "C:\Users\ASUSGR8II\AppData\Local\Programs\UiPath\Studio\UiPath.Studio.CommandLine.exe"
+                -OutputFilePath '$(Pipeline.Workspace)\drop\Workflow-Analysis.json'
+              workingDirectory: $(Build.SourcesDirectory)
+            displayName: 'Analyse Project'
